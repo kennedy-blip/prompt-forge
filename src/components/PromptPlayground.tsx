@@ -1,4 +1,4 @@
-import { Braces, Copy, RotateCcw, Terminal, WandSparkles } from 'lucide-react';
+import { Braces, CircleDot, Copy, RotateCcw, Terminal, WandSparkles } from 'lucide-react';
 import { useState } from 'react';
 import type { ModelId } from '../lib/prompt';
 type Props = { model: ModelId; onExecute: (prompt: string) => { output: string; latency: number; tokens: number } };

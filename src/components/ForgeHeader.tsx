@@ -1,0 +1,6 @@
+import { Activity, ChevronDown, CircleDot, Download, Play, Sparkles } from 'lucide-react';
+import type { ModelId } from '../lib/prompt';
+type Props = { model: ModelId; setModel: (m: ModelId) => void; onRun: () => void; onExport: () => void };
+export default function ForgeHeader({ model, setModel, onRun, onExport }: Props) {
+ return <header className="topbar"><div className="brand"><div className="brand-mark"><Sparkles size={19}/></div><div><div className="brand-name">Prompt<span>Forge</span></div><div className="brand-sub">ENGINEERING WORKBENCH</div></div></div><div className="header-center"><span className="status-dot"/><span>Forge Ready</span><span className="muted">•</span><Activity size={14} className="cyan"/><span className="mono muted">0.4s avg latency</span></div><div className="header-actions"><label className="model-select"><span className="model-indicator"/><select value={model} onChange={e => setModel(e.target.value as ModelId)}><option value="llama3:latest">llama3:latest</option><option value="gemini-2.5-flash">gemini-2.5-flash</option><option value="qwen-2.5-coder">qwen-2.5-coder</option></select><ChevronDown size={13}/></label><button className="btn btn-quiet" onClick={onExport}><Download size={15}/> Export</button><button className="btn btn-primary" onClick={onRun}><Play size={14} fill="currentColor"/> Run pipeline</button></div></header>
+}
